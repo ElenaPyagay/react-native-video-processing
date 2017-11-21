@@ -15,16 +15,12 @@ class RNVideoProcessingManager: RCTViewManager {
        return RNVideoPlayer()
    }
 
-    @objc override func constantsToExport() -> [AnyHashable: Any] {
+    @objc override func constantsToExport() -> [String: Any]! {
         return [
             "ScaleNone": AVLayerVideoGravityResizeAspect,
             "ScaleToFill": AVLayerVideoGravityResize,
             "ScaleAspectFit": AVLayerVideoGravityResizeAspect,
             "ScaleAspectFill": AVLayerVideoGravityResizeAspectFill
         ]
-    }
-
-    override class func requiresMainQueueSetup() -> Bool {
-        return true
     }
 }
